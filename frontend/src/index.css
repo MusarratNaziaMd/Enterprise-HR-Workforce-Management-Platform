@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white px-4 py-2 rounded-lg font-medium
+           hover:bg-primary-700 active:bg-primary-800
+           transition-colors duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply bg-white text-gray-700 px-4 py-2 rounded-lg font-medium border
+           border-gray-300 hover:bg-gray-50 active:bg-gray-100
+           transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white px-4 py-2 rounded-lg font-medium
+           hover:bg-red-700 active:bg-red-800
+           transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+  }
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+           placeholder-gray-400 text-sm transition-colors;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-success {
+    @apply badge bg-green-100 text-green-800;
+  }
+  .badge-warning {
+    @apply badge bg-yellow-100 text-yellow-800;
+  }
+  .badge-danger {
+    @apply badge bg-red-100 text-red-800;
+  }
+  .badge-info {
+    @apply badge bg-blue-100 text-blue-800;
+  }
+}
+
+@layer components {
+  .login-bg { background: radial-gradient(circle at 15% 20%, rgb(59 130 246 / 0.32), transparent 30%), radial-gradient(circle at 85% 78%, rgb(37 99 235 / 0.28), transparent 34%), linear-gradient(135deg, #0f2b66 0%, #1d4ed8 48%, #172554 100%); }
+  .login-orb { @apply absolute rounded-full pointer-events-none; filter: blur(2px); animation: login-float 12s ease-in-out infinite; }
+  .login-orb-1 { width: 22rem; height: 22rem; top: -8rem; left: -7rem; background: rgb(147 197 253 / 0.18); }
+  .login-orb-2 { width: 18rem; height: 18rem; right: -6rem; bottom: -7rem; background: rgb(96 165 250 / 0.16); animation-delay: -4s; }
+  .login-orb-3 { width: 11rem; height: 11rem; top: 45%; right: 12%; background: rgb(191 219 254 / 0.1); animation-delay: -8s; }
+  .login-logo { @apply flex items-center justify-center w-16 h-16 rounded-2xl shadow-lg; background: rgb(255 255 255 / 0.16); box-shadow: 0 12px 32px rgb(15 23 42 / 0.22); backdrop-filter: blur(10px); }
+  .login-card { @apply bg-white shadow-2xl; box-shadow: 0 24px 60px rgb(15 23 42 / 0.28); }
+  .login-input-wrap { @apply relative flex items-center rounded-lg border border-gray-300 bg-white transition-all duration-150; }
+  .login-input-focus { @apply border-primary-500 ring-2 ring-primary-500/20; }
+  .login-input-icon { @apply absolute left-3 w-5 h-5 text-gray-400 pointer-events-none; }
+  .login-input { @apply w-full rounded-lg border-0 bg-transparent py-2.5 pl-10 text-sm text-gray-900 outline-none placeholder:text-gray-400 disabled:cursor-not-allowed disabled:opacity-60; }
+  .login-eye-btn { @apply absolute right-2 flex h-8 w-8 items-center justify-center rounded-md text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 disabled:cursor-not-allowed disabled:opacity-50; }
+  .login-checkbox { @apply h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500; }
+  .login-btn { @apply w-full rounded-lg bg-primary-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-150 hover:bg-primary-700 active:bg-primary-800 disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2; }
+  .login-spinner { @apply h-4 w-4 rounded-full border-2 border-white/40 border-t-white; animation: login-spin 0.75s linear infinite; }
+}
+@keyframes login-float { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, 18px, 0); } }
+@keyframes login-spin { to { transform: rotate(360deg); } }
+@keyframes login-fade-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes login-slide-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes login-shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.animate-fade-in { animation: login-fade-in 0.45s ease-out both; }
+.animate-slide-up { animation: login-slide-up 0.5s ease-out 0.08s both; }
+.animate-shake { animation: login-shake 0.32s ease-in-out; }
+@media (prefers-reduced-motion: reduce) { .login-orb, .login-spinner, .animate-fade-in, .animate-slide-up, .animate-shake { animation: none; } }
+
+@layer base {
+  body { @apply bg-slate-50 text-slate-900 antialiased; }
+  button, input, select, textarea { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2; }
+}
+
+@layer components {
+  .page-header { @apply flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between; }
+  .page-title { @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl; }
+  .page-subtitle { @apply mt-1.5 text-sm leading-6 text-slate-500; }
+  .icon-button { @apply inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700; }
+  .skeleton { @apply rounded-lg bg-slate-200/80; }
+  .card { @apply border-slate-200 shadow-sm; }
+  .btn-primary { @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 shadow-sm; }
+  .btn-secondary { @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5; }
+  .input-field { @apply rounded-xl border-slate-300 py-2.5; }
+  .badge { @apply px-2.5 py-1 font-semibold tracking-wide; }
+}

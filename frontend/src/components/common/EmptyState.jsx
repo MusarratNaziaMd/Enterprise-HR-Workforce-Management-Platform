@@ -1,0 +1,3 @@
+export default function EmptyState({ icon: Icon, title, description, action }) {
+  return <div className="card flex min-h-72 flex-col items-center justify-center p-8 text-center sm:p-12"><div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-50 text-primary-600">{Icon && <Icon fontSize="large" />}</div><h3 className="text-lg font-semibold text-slate-900">{title}</h3><p className="mt-2 max-w-sm text-sm leading-6 text-slate-500">{description}</p>{action && <div className="mt-6">{action}</div>}</div>
+}
