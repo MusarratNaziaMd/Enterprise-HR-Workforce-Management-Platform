@@ -19,7 +19,8 @@ public class CorsConfig {
                 "http://localhost:3000",
                 "http://localhost:5173",
                 "http://localhost:5174",
-                "https://hrpilot.enterprise.com"
+                "https://hrpilot.enterprise.com",
+                "https://hrpilot-frontend.up.railway.app"
         ));
 
         config.setAllowedMethods(List.of(
