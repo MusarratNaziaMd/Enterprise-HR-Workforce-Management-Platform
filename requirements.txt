@@ -1,0 +1,56 @@
+# ============================
+# HRPilot Deployment Requirements
+# ============================
+
+# Backend
+Java==17
+Maven==3.9+
+Spring Boot==3.3.2
+Spring Data JPA
+Spring Security
+Spring Validation
+Spring Boot Actuator
+SpringDoc OpenAPI==2.6.0
+PostgreSQL JDBC Driver
+JJWT==0.12.6
+Lombok==1.18.38
+
+# Database
+PostgreSQL==16
+Supabase PostgreSQL
+
+# Frontend
+Node.js==20.x
+npm==10.x
+React==18.3
+Vite==5.4
+React Router DOM==6.26
+TanStack React Query==5.56
+Axios==1.7
+React Hook Form==7.53
+Material UI==9.2
+MUI Icons==6.5
+Tailwind CSS==3.4
+Emotion
+Recharts==3.9
+React Hot Toast==2.4
+clsx
+
+# Runtime
+JDK 17
+Maven Wrapper (mvnw)
+
+# Environment Variables
+SUPABASE_DB_HOST
+SUPABASE_DB_PORT
+SUPABASE_DB_NAME
+SUPABASE_DB_USERNAME
+SUPABASE_DB_PASSWORD
+APP_JWT_SECRET
+PORT
+
+# Build
+mvn clean package -DskipTests
+
+# Start
+java -jar target/*.jar
